@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "status": "local-create-read-edit-slice; Ghost/client verification pending",
+  "researched_at": "2026-10-25",
+  "reference": {
+    "product": "Ghost",
+    "release": "6.72.0",
+    "commit": "412dff5a21cc8ffbfec0b15554eebcb53194ad15",
+    "release_url": "https://github.com/TryGhost/Ghost/releases/tag/v6.72.0",
+    "published_at": "2026-10-20T15:09:13Z",
+    "runtime_image_digest": null,
+    "runtime_tested": false
+  },
+  "proposed_profile": {
+    "name": "core-publishing-v6",
+    "admin_base_path": "/ghost/api/admin/",
+    "content_base_path": "/ghost/api/content/",
+    "accept_version": "v6.0",
+    "header_semantics": "client minimum expected version; not a selectable historical API implementation",
+    "legacy_shims": "only after observed client request fixtures",
+    "default_page_size": 15,
+    "max_page_size": 100,
+    "limit_all_behavior": "clamped to 100 in Ghost 6",
+    "claimed_compatible": false
+  },
+  "clients": [
+    {
+      "name": "Ulysses",
+      "build": null,
+      "platform": null,
+      "credential_evidence": "staff access token",
+      "tested": false,
+      "installation_observation": "not found under /Applications or ~/Applications on 2026-10-26; other locations not ruled out"
+    },
+    {
+      "name": "iA Writer",
+      "build": "80058",
+      "platform": "macOS",
+      "credential_evidence": "vendor integration Admin key; Ghost guide staff token",
+      "tested": false,
+      "version": "8.0.9",
+      "installed_availability_verified_at": "2026-10-26"
+    }
+  ],
+  "source_evidence": "official documentation and pinned public OSS source",
+  "fixtures": {
+    "measured_count": 0,
+    "synthetic_examples_are_golden": false
+  },
+  "scope_exclusions": [
+    "full Ghost Admin",
+    "newsletters",
+    "members and billing",
+    "all Koenig cards",
+    "production migration"
+  ],
+  "critical_gates": [
+    "client handshake",
+    "format inventory",
+    "native draft handoff",
+    "collision and error fixtures",
+    "restore drill"
+  ],
+  "organization": {
+    "package": "content",
+    "internal_modules": [
+      "cms",
+      "activitypub"
+    ],
+    "website": "separate consumer",
+    "activitypub_runtime": "approved: internal Node/Fedify alongside Go"
+  },
+  "publication_contract": {
+    "status": "internal v2 Go adapter tested with actual Node loopback receiver; no remote delivery",
+    "prototype_compatibility_verified": false,
+    "example_is_wire_contract": false,
+    "internal_v2_verified": true,
+    "fixture_pins": "publishing/testdata/activitypub-v2-pins.json",
+    "profile": "content-activitypub-v2-2026-10-26-r2-unicode-title"
+  },
+  "local_implementation": {
+    "profile": "posts-html-v1",
+    "documentation": "docs/implementation.md",
+    "local_tests": "unit/HTTP and real PostgreSQL 18.6; see docs/validation.md",
+    "ghost_reference_verified": false,
+    "client_compatibility_claimed": false,
+    "discovery": "GET /ghost/api/admin/site/; configurable public metadata",
+    "client_probe_corpus": "contracts/client-probe/; documented synthetic workflow and separate local gaps, not client traces"
+  }
+}

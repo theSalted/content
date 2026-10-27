@@ -1,0 +1,177 @@
+{
+  "profile": "documented-html-workflow-v1",
+  "evidence": "Synthetic requests authored from public API docs; sequence is a test scenario, not captured Ulysses/iA traffic. Exact local error policy is not Ghost differential evidence.",
+  "sources": [
+    "https://docs.ghost.org/admin-api/site/overview",
+    "https://docs.ghost.org/admin-api",
+    "https://docs.ghost.org/admin-api/posts/creating-a-post",
+    "https://docs.ghost.org/admin-api/posts/updating-a-post",
+    "https://docs.ghost.org/admin-api/posts/publishing-a-post"
+  ],
+  "cases": [
+    {
+      "name": "public site object before authentication",
+      "method": "GET",
+      "path": "/ghost/api/admin/site/",
+      "status": 200,
+      "auth": false,
+      "equals": {
+        "site.title": "Synthetic publication",
+        "site.url": "https://frontend.invalid/blog/",
+        "site.logo": null,
+        "site.version": "6.0"
+      },
+      "absent": [
+        "site.admin_key",
+        "site.publication_id"
+      ]
+    },
+    {
+      "name": "post access requires token",
+      "method": "GET",
+      "path": "/ghost/api/admin/posts/",
+      "status": 401,
+      "auth": false,
+      "equals": {
+        "errors.0.errorType": "UnauthorizedError"
+      }
+    },
+    {
+      "name": "HTML draft creation",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/?source=html",
+      "status": 201,
+      "auth": true,
+      "body": {
+        "posts": [
+          {
+            "title": "Synthetic article",
+            "html": "<p>First draft</p>"
+          }
+        ]
+      },
+      "equals": {
+        "posts.0.status": "draft",
+        "posts.0.html": "<p>First draft</p>"
+      },
+      "capture": {
+        "id": "posts.0.id",
+        "created_token": "posts.0.updated_at",
+        "token": "posts.0.updated_at"
+      }
+    },
+    {
+      "name": "draft excluded from public read",
+      "method": "GET",
+      "path": "/ghost/api/content/posts/${id}/?key=synthetic-content-key-for-tests",
+      "status": 404,
+      "auth": false
+    },
+    {
+      "name": "get before edit",
+      "method": "GET",
+      "path": "/ghost/api/admin/posts/${id}/?formats=html",
+      "status": 200,
+      "auth": true,
+      "equals": {
+        "posts.0.title": "Synthetic article"
+      }
+    },
+    {
+      "name": "HTML edit with last-read token",
+      "method": "PUT",
+      "path": "/ghost/api/admin/posts/${id}/?source=html",
+      "status": 200,
+      "auth": true,
+      "body": {
+        "posts": [
+          {
+            "title": "Revised article",
+            "html": "<p>Revised draft</p>",
+            "updated_at": "${token}"
+          }
+        ]
+      },
+      "equals": {
+        "posts.0.html": "<p>Revised draft</p>",
+        "posts.0.status": "draft"
+      },
+      "capture": {
+        "token": "posts.0.updated_at"
+      }
+    },
+    {
+      "name": "stale edit collision local policy",
+      "method": "PUT",
+      "path": "/ghost/api/admin/posts/${id}/",
+      "status": 409,
+      "auth": true,
+      "body": {
+        "posts": [
+          {
+            "title": "Stale overwrite",
+            "updated_at": "${created_token}"
+          }
+        ]
+      }
+    },
+    {
+      "name": "publish via status update",
+      "method": "PUT",
+      "path": "/ghost/api/admin/posts/${id}/",
+      "status": 200,
+      "auth": true,
+      "body": {
+        "posts": [
+          {
+            "status": "published",
+            "updated_at": "${token}"
+          }
+        ]
+      },
+      "equals": {
+        "posts.0.status": "published"
+      },
+      "capture": {
+        "token": "posts.0.updated_at"
+      }
+    },
+    {
+      "name": "eligible content becomes visible",
+      "method": "GET",
+      "path": "/ghost/api/content/posts/${id}/?key=synthetic-content-key-for-tests",
+      "status": 200,
+      "auth": false,
+      "equals": {
+        "posts.0.title": "Revised article",
+        "posts.0.html": "<p>Revised draft</p>"
+      },
+      "absent": [
+        "posts.0.status",
+        "posts.0.source_html",
+        "posts.0.publication_id"
+      ]
+    },
+    {
+      "name": "another share creates a new draft",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/?source=html",
+      "status": 201,
+      "auth": true,
+      "body": {
+        "posts": [
+          {
+            "title": "Synthetic article",
+            "html": "<p>Second share</p>"
+          }
+        ]
+      },
+      "equals": {
+        "posts.0.status": "draft"
+      },
+      "capture": {
+        "second_id": "posts.0.id"
+      }
+    }
+  ]
+}

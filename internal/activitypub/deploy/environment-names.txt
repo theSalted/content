@@ -1,0 +1,60 @@
+# Runtime API/worker (per-service scope; no values or credentials recorded)
+FEDERATION_ENABLED
+DATABASE_URL
+DATABASE_SSL_CA
+DATABASE_POOL_SIZE
+CONTENT_INSTALLATION_ID
+ACTIVITYPUB_SCHEMA
+PUBLICATION_ID
+ACTOR_ID
+ACTOR_KEY_ID
+ACTOR_NAME
+ACTOR_PROFILE_URL
+PUBLIC_CONTENT_ORIGINS
+EXPECTED_PUBLIC_KEY_SHA256
+PUBLISHER_ID
+PUBLISHER_TOKEN
+HOST
+PORT
+SHUTDOWN_GRACE_MS
+NODE_ENV
+
+# One-shot migrator only; never attach these to an application service
+ACTIVITYPUB_MIGRATION_DATABASE_URL
+ACTIVITYPUB_MIGRATION_SSL_CA
+ACTIVITYPUB_SCHEMA
+CONTENT_INSTALLATION_ID
+
+# Optional provider-owned deployment controls, configured only after approval
+RAILWAY_DEPLOYMENT_DRAINING_SECONDS
+RAILWAY_DEPLOYMENT_OVERLAP_SECONDS
+RAILWAY_HEALTHCHECK_TIMEOUT_SEC
+
+# API only: enable public/private listener split
+INTERNAL_PORT
+
+# Optional blog presentation; no personal defaults
+ACTOR_SUMMARY
+ACTOR_ICON_URL
+ACTOR_ICON_ALT
+ACTOR_IMAGE_URL
+ACTOR_IMAGE_URLS
+ACTOR_IMAGE_ALT
+
+# Explicitly gated archive enrollment and moderated interactions (default false)
+ACTIVITYPUB_ARCHIVE_ENABLED
+ACTIVITYPUB_FEEDBACK_ENABLED
+
+# Optional standing on-Follow history; default off
+FOLLOW_HISTORY_LIMIT
+FOLLOW_HISTORY_INTERVAL_MS
+
+# Optional dedicated private moderation credential, not publishing
+MODERATION_TOKEN
+
+# Opt-in CMS receipt resolution lane; requires CMS migration/grants
+CMS_RECEIPT_RESOLUTION_ENABLED
+
+# Optional exact aliases for current public media representations, configured together
+PUBLIC_MEDIA_ORIGIN
+PUBLIC_MEDIA_SOURCE_ORIGINS

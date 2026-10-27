@@ -1,0 +1,103 @@
+{
+  "profile": "client-gaps-local-v1",
+  "evidence": "These assertions describe current content limitations; they are deliberately not Ghost expected responses or confirmed client probes. Update only when implementing the corresponding capability.",
+  "cases": [
+    {
+      "name": "users/me/ remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/users/me/",
+      "status": 404
+    },
+    {
+      "name": "users/?include=roles remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/users/?include=roles",
+      "status": 404
+    },
+    {
+      "name": "roles/ remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/roles/",
+      "status": 404
+    },
+    {
+      "name": "settings/ remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/settings/",
+      "status": 404
+    },
+    {
+      "name": "config/ remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/config/",
+      "status": 404
+    },
+    {
+      "name": "tags/ remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/admin/tags/",
+      "status": 404
+    },
+    {
+      "name": "image upload remains unimplemented",
+      "method": "POST",
+      "path": "/ghost/api/admin/images/upload/",
+      "status": 404,
+      "content_type": "multipart/form-data; boundary=fixture",
+      "body": "--fixture\r\nContent-Disposition: form-data; name=\"ref\"\r\n\r\nsynthetic.png\r\n--fixture--\r\n"
+    },
+    {
+      "name": "staff session remains unimplemented",
+      "method": "POST",
+      "path": "/ghost/api/admin/session/",
+      "status": 404
+    },
+    {
+      "name": "browser handoff remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/",
+      "status": 404
+    },
+    {
+      "name": "legacy versioned route remains unimplemented",
+      "method": "GET",
+      "path": "/ghost/api/v3/admin/site/",
+      "status": 404
+    },
+    {
+      "name": "older minimum version remains unsupported local policy",
+      "method": "GET",
+      "path": "/ghost/api/admin/posts/",
+      "accept_version": "v3.0",
+      "status": 400
+    },
+    {
+      "name": "Lexical input remains rejected",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/",
+      "body": "{\"posts\": [{\"title\": \"Synthetic\", \"lexical\": \"{}\"}]}",
+      "status": 400
+    },
+    {
+      "name": "Mobiledoc input remains rejected",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/?source=html",
+      "body": "{\"posts\": [{\"title\": \"Synthetic\", \"mobiledoc\": \"{}\"}]}",
+      "status": 400
+    },
+    {
+      "name": "tags and excerpt remain rejected without loss",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/?source=html",
+      "body": "{\"posts\": [{\"title\": \"Synthetic\", \"html\": \"<p>Text</p>\", \"tags\": [\"Synthetic\"], \"custom_excerpt\": \"Summary\"}]}",
+      "status": 400
+    },
+    {
+      "name": "featured image metadata remains rejected",
+      "method": "POST",
+      "path": "/ghost/api/admin/posts/?source=html",
+      "body": "{\"posts\": [{\"title\": \"Synthetic\", \"feature_image\": \"https://example.invalid/image.png\"}]}",
+      "status": 400
+    }
+  ]
+}

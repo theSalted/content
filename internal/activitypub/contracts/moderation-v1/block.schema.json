@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "actor": {
+      "type": "string",
+      "maxLength": 2048,
+      "format": "uri"
+    },
+    "blocked": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "actor",
+    "blocked"
+  ],
+  "additionalProperties": false,
+  "$id": "urn:content:activitypub:moderation:v1:block"
+}

@@ -1,0 +1,334 @@
+{
+  "profile": "content-activitypub-receipt-resolver-v1",
+  "fixtures": [
+    {
+      "name": "applied",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "e9e06eaf92cef673c12ea04bf898f8dfc7c9d4ffb2b8692ab14a0d59559294f7",
+        "result": "applied",
+        "projection": {
+          "object_id": "https://federation.example/ap/objects/publication-example/e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "revision": "1",
+          "state": "public"
+        },
+        "reason": "confirmed"
+      }
+    },
+    {
+      "name": "same-instance-later-edit",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "e9e06eaf92cef673c12ea04bf898f8dfc7c9d4ffb2b8692ab14a0d59559294f7",
+        "result": "applied",
+        "projection": {
+          "object_id": "https://federation.example/ap/objects/publication-example/e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "revision": "2",
+          "state": "public"
+        },
+        "reason": "confirmed"
+      }
+    },
+    {
+      "name": "stale",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "10000000-0000-4000-8000-000000000003",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "10000000-0000-4000-8000-000000000003",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "c0afda0490b368daaabbf171be2f360ca3a5c791abb64af322b0a9c415d554d7",
+        "result": "stale",
+        "projection": null,
+        "reason": "stale_receipt"
+      }
+    },
+    {
+      "name": "withdrawn",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "e9e06eaf92cef673c12ea04bf898f8dfc7c9d4ffb2b8692ab14a0d59559294f7",
+        "result": "applied",
+        "projection": null,
+        "reason": "not_public"
+      }
+    },
+    {
+      "name": "superseded",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "e9e06eaf92cef673c12ea04bf898f8dfc7c9d4ffb2b8692ab14a0d59559294f7",
+        "result": "applied",
+        "projection": null,
+        "reason": "superseded"
+      }
+    },
+    {
+      "name": "republished",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 2,
+          "publication_id": "publication-example",
+          "event_id": "10000000-0000-4000-8000-000000000005",
+          "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+          "object_instance": "10000000-0000-4000-8000-000000000006",
+          "delivery_policy": "live",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "4",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "10000000-0000-4000-8000-000000000005",
+        "publication_id": "publication-example",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "4",
+        "event_hash": "20ad54fe3595111148923417b0fa7b38ac2e75e8b1e83f989020f98389c0841b",
+        "result": "applied",
+        "projection": {
+          "object_id": "https://federation.example/ap/objects/publication-example/10000000-0000-4000-8000-000000000006",
+          "object_instance": "10000000-0000-4000-8000-000000000006",
+          "revision": "4",
+          "state": "public"
+        },
+        "reason": "confirmed"
+      }
+    },
+    {
+      "name": "silent-archive",
+      "query": {
+        "schema_version": 1,
+        "event": {
+          "schema_version": 1,
+          "publication_id": "publication-example",
+          "event_id": "10000000-0000-4000-8000-000000000007",
+          "content_id": "10000000-0000-4000-8000-000000000008",
+          "object_instance": "10000000-0000-4000-8000-000000000009",
+          "delivery_policy": "archive",
+          "source": {
+            "id": "content",
+            "epoch": "1"
+          },
+          "revision": "1",
+          "occurred_at": "2026-10-25T12:00:00Z",
+          "type": "content.archived",
+          "source_state": "published",
+          "document": {
+            "visibility": "public",
+            "title": "A public article",
+            "html": "<p>A public article body.</p>",
+            "url": "https://federation.example/blog/article",
+            "published_at": "2026-10-25T12:00:00Z",
+            "language": "en"
+          }
+        }
+      },
+      "response": {
+        "schema_version": 1,
+        "event_id": "10000000-0000-4000-8000-000000000007",
+        "publication_id": "publication-example",
+        "content_id": "10000000-0000-4000-8000-000000000008",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "event_hash": "4b888423c9965bdb55582c913a69bb9e7e7022845ca65b4c26c3ceb1fe75336c",
+        "result": "applied",
+        "projection": {
+          "object_id": "https://federation.example/ap/objects/publication-example/10000000-0000-4000-8000-000000000009",
+          "object_instance": "10000000-0000-4000-8000-000000000009",
+          "revision": "1",
+          "state": "public"
+        },
+        "reason": "confirmed"
+      }
+    }
+  ]
+}

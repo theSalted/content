@@ -1,0 +1,16 @@
+**/.git
+**/node_modules
+**/.env
+**/.env.*
+**/.DS_Store
+**/*.key
+**/*.pem
+**/*.p12
+**/*.har
+**/private
+**/credentials
+**/secrets
+**/backups
+**/data
+**/bin
+**/coverage.out

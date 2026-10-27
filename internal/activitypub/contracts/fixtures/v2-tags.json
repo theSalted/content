@@ -1,0 +1,1011 @@
+[
+  {
+    "name": "tags-absent",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en"
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "e9e06eaf92cef673c12ea04bf898f8dfc7c9d4ffb2b8692ab14a0d59559294f7"
+  },
+  {
+    "name": "tags-empty",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": []
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "da827044f236e33268dc8d82e9537a4648ddc271985c7eb660bef71dc2d73414"
+  },
+  {
+    "name": "tags-ascii",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "633670101fc252b1ef43d27f86ebf18d62dc60e5abc7541afa7508b562dfac7b"
+  },
+  {
+    "name": "tags-unicode",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "攝影",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "eb3864e54692b33f824e310041cb1f203936a228ee0fefe569a3f0b7676fc07b"
+  },
+  {
+    "name": "tags-label-with-spaces",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Machine Learning",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "e075631fea885d1ab443928c2af0ad733f2c0933f71a20793500619b85fb1c88"
+  },
+  {
+    "name": "tags-punctuation-preserved",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "C++",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "34a16891d2cf06d558c6f9f700ca524f182befc7aa41040391382ad843e65c5d"
+  },
+  {
+    "name": "tags-combining",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "é",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "3e0d84c3e9a87501b59dcfbacee1f141dbab6e7d2f9a2207f4f9bd44f74f4342"
+  },
+  {
+    "name": "tags-100-codepoints",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "79bd4dad239312c92f1a64a84dc6d85df135a0df18ed3032b43bf110cbc38e27"
+  },
+  {
+    "name": "tags-101-codepoints",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝攝",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-blank",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": " ",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-internal-tag",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "#private",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-internal-tag-whitespace",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": " #private",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-nul",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "a\u0000b",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-surrogate",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "\ud800",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-credentials",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://user:pass@example.org/tag/x"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-query",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/?secret=x"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-fragment",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/#x"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-http",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "http://example.org/tag/x"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-duplicate-url",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/"
+          },
+          {
+            "name": "Other",
+            "href": "https://example.org/tag/photography/"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-unknown-field",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/",
+            "visibility": "private"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-null",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": null
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-33-tags",
+    "valid": false,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/0"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/1"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/2"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/3"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/4"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/5"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/6"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/7"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/8"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/9"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/10"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/11"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/12"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/13"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/14"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/15"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/16"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/17"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/18"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/19"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/20"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/21"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/22"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/23"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/24"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/25"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/26"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/27"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/28"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/29"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/30"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/31"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/32"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    }
+  },
+  {
+    "name": "tags-32-tags",
+    "valid": true,
+    "event": {
+      "schema_version": 2,
+      "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+      "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "source": {
+        "id": "content",
+        "epoch": "1"
+      },
+      "revision": "1",
+      "occurred_at": "2026-10-25T12:00:00Z",
+      "type": "content.published",
+      "document": {
+        "visibility": "public",
+        "title": "A public article",
+        "html": "<p>A public article body.</p>",
+        "url": "https://federation.example/blog/article",
+        "published_at": "2026-10-25T12:00:00Z",
+        "language": "en",
+        "tags": [
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/0"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/1"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/2"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/3"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/4"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/5"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/6"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/7"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/8"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/9"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/10"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/11"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/12"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/13"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/14"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/15"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/16"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/17"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/18"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/19"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/20"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/21"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/22"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/23"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/24"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/25"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/26"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/27"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/28"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/29"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/30"
+          },
+          {
+            "name": "Photography",
+            "href": "https://example.org/tag/photography/31"
+          }
+        ]
+      },
+      "publication_id": "publication-example",
+      "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+      "delivery_policy": "live"
+    },
+    "sha256": "aa31047ae6f3d74423b50d0ec2fcfc20c6bdf1cb57e85bb187f374ae2d8c12ff"
+  }
+]

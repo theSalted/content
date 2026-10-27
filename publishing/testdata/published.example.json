@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "event_id": "f7fe3e09-acda-484b-a374-61bdba466902",
+  "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+  "source": {
+    "id": "content",
+    "epoch": "1"
+  },
+  "revision": "1",
+  "occurred_at": "2026-10-25T12:00:00Z",
+  "type": "content.published",
+  "document": {
+    "visibility": "public",
+    "title": "A public article",
+    "html": "<p>A public article body.</p>",
+    "url": "https://federation.example/blog/article",
+    "published_at": "2026-10-25T12:00:00Z",
+    "language": "en"
+  },
+  "publication_id": "publication-example",
+  "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+  "delivery_policy": "live"
+}

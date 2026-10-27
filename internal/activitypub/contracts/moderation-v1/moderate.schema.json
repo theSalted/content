@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "maxLength": 2048,
+      "format": "uri"
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "rejected"
+      ]
+    },
+    "expected_activity_id": {
+      "type": "string",
+      "maxLength": 2048,
+      "format": "uri"
+    }
+  },
+  "required": [
+    "id",
+    "decision",
+    "expected_activity_id"
+  ],
+  "additionalProperties": false,
+  "$id": "urn:content:activitypub:moderation:v1:moderate"
+}

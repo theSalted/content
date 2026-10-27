@@ -1,0 +1,47 @@
+{
+  "status": "review-only; not Railway IaC and not applied",
+  "product": "content",
+  "module": "internal/activitypub",
+  "database": "existing approved shared Supabase PostgreSQL project; dedicated AP schema and roles",
+  "services": [
+    {
+      "proposedName": "content-ap-api",
+      "sourceRoot": "/internal/activitypub",
+      "builder": "DOCKERFILE",
+      "dockerfile": "Dockerfile",
+      "startCommand": "node src/main.ts",
+      "healthcheckPath": "/health/ready",
+      "healthcheckTimeoutSeconds": 60,
+      "replicas": 1,
+      "sleeping": false,
+      "restartPolicy": "ON_FAILURE",
+      "restartMaxRetries": 3,
+      "publicDomain": "separately approved canonical staging hostname only",
+      "persistentVolumes": [],
+      "preDeployCommand": null
+    },
+    {
+      "proposedName": "content-ap-worker",
+      "sourceRoot": "/internal/activitypub",
+      "builder": "DOCKERFILE",
+      "dockerfile": "Dockerfile",
+      "startCommand": "node src/worker-main.ts",
+      "healthcheckPath": "/health/ready",
+      "healthcheckTimeoutSeconds": 60,
+      "replicas": 1,
+      "sleeping": false,
+      "restartPolicy": "ON_FAILURE",
+      "restartMaxRetries": 3,
+      "publicDomain": null,
+      "persistentVolumes": [],
+      "preDeployCommand": null
+    }
+  ],
+  "operatorJob": {
+    "imageBuildTarget": "migrator",
+    "command": "node src/migrate.ts",
+    "connectionCap": 2,
+    "persistentService": false,
+    "identityInitialization": false
+  }
+}

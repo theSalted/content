@@ -1,0 +1,13 @@
+FROM node@sha256:a9f5f7c91a432850b2a8a7797adf5eadb6c733ceed61167806cee7ea7fbc29df AS dependencies
+WORKDIR /app
+COPY internal/activitypub/package.json internal/activitypub/package-lock.json ./
+RUN npm ci --omit=dev --ignore-scripts --no-audit --no-fund && npm cache clean --force
+FROM dependencies AS runtime-source
+COPY internal/activitypub/src ./src
+RUN rm src/migrate.ts src/import-identity.ts
+FROM dependencies AS runtime
+COPY --from=runtime-source /app/src ./src
+USER node
+ENV HOST=0.0.0.0 PORT=3000 NODE_ENV=production FEDERATION_ENABLED=false
+EXPOSE 3000
+CMD ["node", "src/worker-main.ts"]

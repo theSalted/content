@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "title": "A synthetic publishing example",
+      "slug": "synthetic-publishing-example",
+      "html": "<h2>Hello</h2><p>Test content with Unicode: 世界.</p>",
+      "status": "draft",
+      "tags": ["Research"],
+      "custom_excerpt": "Synthetic content for contract discussion."
+    }
+  ]
+}

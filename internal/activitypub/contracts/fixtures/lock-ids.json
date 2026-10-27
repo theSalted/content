@@ -1,0 +1,8 @@
+[
+  {
+    "installation": "example-installation",
+    "schema": "example_ap",
+    "module": "activitypub",
+    "lock_id": "-3176569657214464465"
+  }
+]

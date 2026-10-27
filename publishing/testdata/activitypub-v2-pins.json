@@ -1,0 +1,10 @@
+{
+  "contracts/publishing-event.v2.schema.json": "e2005ddf097f830deb229141729f71dd99608b9423c2078223b6ff1c509d02aa",
+  "contracts/published.example.json": "66a2a38f17545de9f343432db42953eb6ed05263d0c8f4629e76cc0b71e5140d",
+  "contracts/fixtures/v2-cases.json": "21808642c9e6f4fa837bc30846104655341b25f42009bef151cefe2e55efd2d9",
+  "contracts/fixtures/v2-lifecycle.json": "6b5c1c71da30aec654cc317bb0e72d6d4e23d4d558a92ae4a5b70cc554b6318f",
+  "contracts/fixtures/lock-ids.json": "0f7a039e56a701c37128af72e574977d3df6a71906213f5f601b13f792c62927",
+  "contracts/fixtures/manifest.json": "ad3ac64260fae58b07297ad65d3d40b6618c1ce253cfea9ece2c4b64a6aff538",
+  "contracts/fixtures/v2-tags.json": "3a3c4d172ff5e9db6a738a7ec0814979fe3dc5d21feb13803a5bbd5ed5be4847",
+  "contracts/archive-v1/schema.json": "d32477f3775458e7a2c55b9b9924c08e671fcafb322f495388d4c13e2cbd29ff"
+}

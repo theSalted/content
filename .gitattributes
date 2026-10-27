@@ -1,0 +1,2 @@
+# Bundled JavaScript contains meaningful trailing spaces inside string literals.
+internal/review/assets/editor.js -whitespace

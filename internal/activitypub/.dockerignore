@@ -1,0 +1,10 @@
+# Allowlist prevents keys, dotenv files, test fixtures and local dependencies
+# from entering the build context. The runtime image copies only source.
+**
+!Dockerfile
+!package.json
+!package-lock.json
+!src/
+!src/**
+!migrations/
+!migrations/**

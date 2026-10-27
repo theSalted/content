@@ -1,0 +1,41 @@
+{
+  "name": "@content/activitypub",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --test --test-concurrency=1 test/*.test.ts",
+    "start": "node src/main.ts",
+    "worker": "node src/worker-main.ts",
+    "migrate": "node src/migrate.ts",
+    "identity:import": "node src/import-identity.ts",
+    "test:postgres": "node --test test/postgres.test.ts",
+    "schema": "node scripts/export-schema.ts"
+  },
+  "dependencies": {
+    "@fedify/fedify": "2.4.5",
+    "@fedify/postgres": "2.4.5",
+    "@fedify/vocab": "2.4.5",
+    "@fedify/vocab-runtime": "2.4.5",
+    "@hono/node-server": "2.1.5",
+    "postgres": "3.4.9",
+    "sanitize-html": "2.18.1",
+    "zod": "4.6.7",
+    "temporal-polyfill": "1.0.1",
+    "structured-field-values": "2.0.4",
+    "htmlparser2": "12.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.11",
+    "@types/node": "24.19.2",
+    "@types/sanitize-html": "2.16.2",
+    "typescript": "7.0.2"
+  },
+  "overrides": {
+    "@opentelemetry/sdk-metrics": "2.8.0"
+  }
+}

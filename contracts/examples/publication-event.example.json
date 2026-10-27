@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "event_id": "d7fac0d0-0d9a-49ae-b762-327da4a5bef1",
+  "site_id": "publication-example",
+  "content_id": "7ac1e6b0-992c-46b7-a900-4979b37caeca",
+  "source": {
+    "system": "content",
+    "site": "publication-example",
+    "ghost_uuid": "7ac1e6b0-992c-46b7-a900-4979b37caeca"
+  },
+  "ownership_generation": 2,
+  "revision": 7,
+  "operation": "update",
+  "visibility": "public",
+  "occurred_at": "2026-10-25T12:00:00.000Z",
+  "canonical_url": "https://example.invalid/a-stable-article/",
+  "snapshot_id": "9bcd4bb2-c6e7-4c94-81a0-a9cafc08785e",
+  "delivery_policy": "live"
+}

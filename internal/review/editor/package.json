@@ -1,0 +1,29 @@
+{
+  "name": "@content/review-editor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser editor for the content review UI. Built into ../assets/editor.js, which the Go binary embeds.",
+  "scripts": {
+    "build": "bun build src/main.js --outfile ../assets/editor.js --format iife --target browser --minify --sourcemap=none",
+    "test:browser": "node test/browser/run.js"
+  },
+  "dependencies": {
+    "@tiptap/core": "3.31.4",
+    "@tiptap/extension-code-block": "3.31.4",
+    "@tiptap/extension-image": "3.31.4",
+    "@tiptap/extension-link": "3.31.4",
+    "@tiptap/extension-table": "3.31.4",
+    "@tiptap/markdown": "3.31.4",
+    "@tiptap/pm": "3.31.4",
+    "@tiptap/starter-kit": "3.31.4"
+  },
+  "devDependencies": {
+    "playwright-core": "1.63.0"
+  },
+  "overrides": {
+    "linkifyjs": "4.3.3",
+    "prosemirror-transform": "1.12.2",
+    "prosemirror-view": "1.42.6"
+  }
+}

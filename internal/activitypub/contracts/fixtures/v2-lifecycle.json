@@ -1,0 +1,262 @@
+{
+  "version": 2,
+  "steps": [
+    {
+      "name": "first-publication",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000001",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.published",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "applied"
+    },
+    {
+      "name": "lost-202-exact-retry",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000001",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "1",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.published",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "duplicate",
+      "original_result": "applied"
+    },
+    {
+      "name": "immutable-update",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000002",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "2",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.updated",
+        "document": {
+          "visibility": "public",
+          "title": "Immutable second revision",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "applied"
+    },
+    {
+      "name": "withdraw-instance",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000003",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "3",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.withdrawn",
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "applied"
+    },
+    {
+      "name": "republish-same-content-new-instance",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000004",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "4",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.published",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-26T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "00000000-0000-4000-8000-000000000100",
+        "delivery_policy": "live"
+      },
+      "result": "applied"
+    },
+    {
+      "name": "superseded-old-instance-event",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000010",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "2",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.updated",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "stale"
+    },
+    {
+      "name": "stale-exact-retry",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000010",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "2",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.updated",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "delivery_policy": "live"
+      },
+      "result": "duplicate",
+      "original_result": "stale"
+    },
+    {
+      "name": "permanent-delete",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000005",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "5",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.deleted",
+        "publication_id": "publication-example",
+        "object_instance": "00000000-0000-4000-8000-000000000100",
+        "delivery_policy": "live"
+      },
+      "result": "applied"
+    },
+    {
+      "name": "withdrawal-cannot-undo-deletion",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000006",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "6",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.withdrawn",
+        "publication_id": "publication-example",
+        "object_instance": "00000000-0000-4000-8000-000000000100",
+        "delivery_policy": "live"
+      },
+      "error": "tombstone_is_final"
+    },
+    {
+      "name": "deletion-cannot-republish",
+      "event": {
+        "schema_version": 2,
+        "event_id": "00000000-0000-4000-8000-000000000007",
+        "content_id": "e7721079-2da1-43a6-9676-48b5ad030b78",
+        "source": {
+          "id": "content",
+          "epoch": "1"
+        },
+        "revision": "7",
+        "occurred_at": "2026-10-25T12:00:00Z",
+        "type": "content.published",
+        "document": {
+          "visibility": "public",
+          "title": "A public article",
+          "html": "<p>A public article body.</p>",
+          "url": "https://federation.example/blog/article",
+          "published_at": "2026-10-25T12:00:00Z",
+          "language": "en"
+        },
+        "publication_id": "publication-example",
+        "object_instance": "00000000-0000-4000-8000-000000000101",
+        "delivery_policy": "live"
+      },
+      "error": "tombstone_is_final"
+    }
+  ],
+  "expected_activity_kinds": [
+    "Create",
+    "Update",
+    "Delete",
+    "Create",
+    "Delete"
+  ],
+  "final_revision": "5",
+  "final_state": "deleted"
+}
